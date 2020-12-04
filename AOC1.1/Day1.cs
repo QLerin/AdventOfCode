@@ -7,8 +7,8 @@ namespace AOC1._1
     {
         public static void Task1()
         {
-            //TODO replace with relative call
-            string[] lines = System.IO.File.ReadAllLines(@"C:\Remote\AdventOfCoding2020\AOC1.1\Resources\Data1.1.txt");
+            //TODO replace with relative path
+            string[] lines = System.IO.File.ReadAllLines(@"C:\Remote\AdventOfCoding2020\AOC1.1\Resources\Data1.txt");
             var numbers = lines.Select(line => int.Parse(line)).ToList();
 
             for (int i = 0; i < numbers.Count - 1; i++)
@@ -27,7 +27,7 @@ namespace AOC1._1
 
         public static void Task2()
         {
-            string[] lines = System.IO.File.ReadAllLines(@"C:\Remote\AdventOfCoding2020\AOC1.1\Resources\Data1.2.txt");
+            string[] lines = System.IO.File.ReadAllLines(@"C:\Remote\AdventOfCoding2020\AOC1.1\Resources\Data1.txt");
             var numbers = lines.Select(line => int.Parse(line)).ToList();
 
             for (int i = 0; i < numbers.Count - 2; i++)
