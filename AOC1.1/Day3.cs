@@ -7,31 +7,14 @@ namespace AOC1._1
     {
         public static void Task1()
         {
-            string[] lines = System.IO.File.ReadAllLines(@"C:\Remote\AdventOfCoding2020\AOC1.1\Resources\Data3.1.txt");
-            int treesCount = 0;
-            int startingX = 0;
-            int rowsCount = lines.First().Length;
-            foreach (var line in lines)
-            {
-                var charArray = line.ToCharArray();
-
-                if (startingX >= rowsCount)
-                {
-                    startingX -= rowsCount;
-                }
-
-                if (charArray[startingX] == '#')
-                {
-                    treesCount++;
-                }
-                startingX += 3;
-            }
+            string[] lines = System.IO.File.ReadAllLines(@"C:\Remote\AdventOfCoding2020\AOC1.1\Resources\Data3.txt");
+            int treesCount = GetTreesCount(lines, 3, 1);
             Console.WriteLine($"Day 3, task 1: {treesCount}");
         }
 
         public static void Task2()
         {
-            string[] lines = System.IO.File.ReadAllLines(@"C:\Remote\AdventOfCoding2020\AOC1.1\Resources\Data3.2.txt");
+            string[] lines = System.IO.File.ReadAllLines(@"C:\Remote\AdventOfCoding2020\AOC1.1\Resources\Data3.txt");
             int treesCount11 = GetTreesCount(lines, 1, 1);
             int treesCount31 = GetTreesCount(lines, 3, 1);
             int treesCount51 = GetTreesCount(lines, 5, 1);
@@ -44,6 +27,7 @@ namespace AOC1._1
         private static int GetTreesCount(string[] lines, int xIncrement, int yIncrement)
         {
             int columnsCount = lines.First().Length;
+
             int startingX = 0;
             int treesCount = 0;
             for (int i = 0; i < lines.Length; i += yIncrement)
