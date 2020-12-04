@@ -43,16 +43,16 @@ namespace AOC1._1
 
         private static int GetTreesCount(string[] lines, int xIncrement, int yIncrement)
         {
-            int rowsCount = lines.First().Length;
+            int columnsCount = lines.First().Length;
             int startingX = 0;
             int treesCount = 0;
             for (int i = 0; i < lines.Length; i += yIncrement)
             {
                 var charArray = lines[i].ToCharArray();
 
-                if (startingX >= rowsCount)
+                if (startingX >= columnsCount)
                 {
-                    startingX -= rowsCount;
+                    startingX -= columnsCount;
                 }
 
                 if (charArray[startingX] == '#')
