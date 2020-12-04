@@ -148,103 +148,9 @@ namespace AOC1._1 {
         ///1914
         ///118 [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string Data1_1 {
+        internal static string Data1 {
             get {
-                return ResourceManager.GetString("Data1_1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 2004
-        ///1823
-        ///1628
-        ///1867
-        ///1073
-        ///1951
-        ///1909
-        ///1761
-        ///1093
-        ///1992
-        ///1986
-        ///1106
-        ///1537
-        ///1905
-        ///1233
-        ///1961
-        ///1760
-        ///1562
-        ///1781
-        ///1329
-        ///1272
-        ///1660
-        ///1367
-        ///1248
-        ///1697
-        ///1515
-        ///1470
-        ///1980
-        ///1884
-        ///1784
-        ///1966
-        ///1778
-        ///1426
-        ///1255
-        ///1089
-        ///1748
-        ///1253
-        ///1870
-        ///1651
-        ///1131
-        ///1623
-        ///1595
-        ///1128
-        ///1014
-        ///1863
-        ///1855
-        ///1203
-        ///1395
-        ///1521
-        ///1365
-        ///1202
-        ///780
-        ///1560
-        ///1834
-        ///1494
-        ///1551
-        ///1398
-        ///1190
-        ///1975
-        ///1940
-        ///1217
-        ///1793
-        ///1310
-        ///1070
-        ///1865
-        ///1307
-        ///1735
-        ///1897
-        ///1410
-        ///1994
-        ///1541
-        ///1569
-        ///1731
-        ///1238
-        ///1193
-        ///1226
-        ///1435
-        ///1159
-        ///1642
-        ///1652
-        ///1908
-        ///1920
-        ///1930
-        ///1068
-        ///1914
-        ///118 [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string Data1_2 {
-            get {
-                return ResourceManager.GetString("Data1_2", resourceCulture);
+                return ResourceManager.GetString("Data1", resourceCulture);
             }
         }
         
@@ -275,42 +181,9 @@ namespace AOC1._1 {
         ///2-4 g: rnggggdkhjm
         ///1-3 x [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string Data2_1 {
+        internal static string Data2 {
             get {
-                return ResourceManager.GetString("Data2_1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 2-8 t: pncmjxlvckfbtrjh
-        ///8-9 l: lzllllldsl
-        ///3-11 c: ccchcccccclxnkcmc
-        ///3-10 h: xcvxkdqshh
-        ///4-5 s: gssss
-        ///7-14 m: mmcmqmmxmmmnmmrmcxc
-        ///3-12 n: grnxnbsmzttnzbnnn
-        ///5-9 j: ddqwznjhjcjn
-        ///8-9 d: fddddddmd
-        ///6-8 t: qtlwttsqg
-        ///7-15 m: lxzxrdbmmtvwhgm
-        ///6-10 h: hhnhhhhxhkh
-        ///6-8 z: zhgztgjzzfzqzzvnbmv
-        ///5-6 j: jjjjgt
-        ///2-3 m: mmmfxzm
-        ///6-7 n: nnnqgdnn
-        ///8-13 b: bbbbbbbbqjbbb
-        ///7-8 k: kkgkkbskkk
-        ///1-3 g: gdmvgb
-        ///5-15 g: gggzgpsgsgglxgqdfggg
-        ///12-16 s: snhsmxszbsszzclp
-        ///2-3 n: vhnnn
-        ///5-7 l: slllclllkc
-        ///2-4 g: rnggggdkhjm
-        ///1-3 x [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string Data2_2 {
-            get {
-                return ResourceManager.GetString("Data2_2", resourceCulture);
+                return ResourceManager.GetString("Data2", resourceCulture);
             }
         }
         
@@ -332,33 +205,42 @@ namespace AOC1._1 {
         ///...........#.........#..#......
         ///#...........#.#.. [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string Data3_1 {
+        internal static string Data3 {
             get {
-                return ResourceManager.GetString("Data3_1", resourceCulture);
+                return ResourceManager.GetString("Data3", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .............#...#....#.....##.
-        ///.#...##.........#.#.........#.#
-        ///.....##......#.......#.........
-        ///.......#...........#.#.........
-        ///#...........#...#..#.#......#..
-        ///.........##....#.#...#.........
-        ///.....#.........#.#...........#.
-        ///....#...............##....##...
-        ///#.#.............#..#.......#.#.
-        ///...#...........................
-        ///......#..#....#.............#..
-        ///........#......#.......#.......
-        ///....#.....#..#.#...#.........#.
-        ///..#.#.......#.##...#....#.....#
-        ///...........#.........#..#......
-        ///#...........#.#.. [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to eyr:2029 pid:157374862
+        ///byr:1991 ecl:amb hcl:#a97842 hgt:178cm
+        ///
+        ///byr:1962 pid:547578491 eyr:2028 ecl:hzl hgt:65in iyr:2013 hcl:#623a2f
+        ///
+        ///hgt:71in eyr:2037
+        ///ecl:#8e276e hcl:z iyr:2019
+        ///byr:2022 pid:157cm
+        ///
+        ///hcl:#733820 hgt:175 eyr:2028 iyr:2011
+        ///pid:87786389
+        ///ecl:hzl byr:1980
+        ///
+        ///hgt:163in hcl:z pid:8261494508 cid:136 ecl:grn eyr:1958
+        ///byr:2030 iyr:1991
+        ///
+        ///iyr:2021
+        ///hcl:6708a3
+        ///ecl:zzz eyr:2034 byr:2010
+        ///hgt:189cm
+        ///pid:466438311
+        ///
+        ///iyr:2012 pid:9720867166 byr:2006 eyr:2022 hgt:72cm ecl:utc hcl:#c0946f
+        ///
+        ///ec [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string Data3_2 {
+        internal static string Data4 {
             get {
-                return ResourceManager.GetString("Data3_2", resourceCulture);
+                return ResourceManager.GetString("Data4", resourceCulture);
             }
         }
     }

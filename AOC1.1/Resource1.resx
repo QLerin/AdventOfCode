@@ -118,22 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Data1_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Data1.1.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="Data1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\data1.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="Data1_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Data1.2.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="Data2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\data2.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="Data2_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Data2.1.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  <data name="Data3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\data3.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="Data2_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Data2.2.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="Data3_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Data3.1.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="Data3_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Data3.2.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="Data4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\data4.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>
