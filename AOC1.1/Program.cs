@@ -12,6 +12,8 @@
             Day3.Task2();
             Day4.Task1();
             Day4.Task2();
+            Day5.Task1();
+            Day5.Task2();
         }
     }
 }
