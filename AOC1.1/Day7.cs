@@ -48,12 +48,19 @@ namespace AOC1._1
             }
 
             Console.WriteLine($"Day 7, task 1: {bagsWhichCanCarry.Count - 1}");
-            var texts = bagsWhichCanCarry.Select(bag => bag.Name).OrderBy(bag => bag).ToList();
         }
 
         public static void Task2()
         {
+            string[] lines = System.IO.File.ReadAllLines(@"C:\Remote\AdventOfCoding2020\AOC1.1\Resources\Data7.txt");
+            Dictionary<string, Bag> dictionary = GetDictionary(lines);
 
+            var shinyGoldBag = dictionary["shiny gold"];
+
+            int count = 0;
+            AddBagsCount(ref count, shinyGoldBag, 1, shinyGoldBag);
+
+            Console.WriteLine($"Day 7, task 2: {count}");
         }
 
         private static Dictionary<string, Bag> GetDictionary(string[] lines)
@@ -109,6 +116,7 @@ namespace AOC1._1
             {
                 if (chainSet.Contains(child.Key))
                 {
+                    //Expected infinity loop recursion but that didn't happen
                     return;
                 }
 
@@ -128,6 +136,25 @@ namespace AOC1._1
                 {
                     RecursiveSearch(bagsWhichCanCarry, childChild.Key, currentChainSet);
                 }
+            }
+        }
+
+        private static void AddBagsCount(ref int count, Bag bag, int requiredBagAmount, Bag mainBag)
+        {
+            if (bag.Children.Count == 0)
+            {
+                count += requiredBagAmount;
+                return;
+            }
+
+            foreach (var childWithCount in bag.Children)
+            {
+                AddBagsCount(ref count, childWithCount.Key, childWithCount.Value * requiredBagAmount, mainBag);
+            }
+
+            if (bag != mainBag)
+            {
+                count += requiredBagAmount;
             }
         }
     }
