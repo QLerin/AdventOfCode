@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 
 namespace AOC1._1
 {
@@ -87,6 +88,61 @@ namespace AOC1._1
 
         public static void Task2()
         {
+            string[] lines = System.IO.File.ReadAllLines(@"C:\Remote\AdventOfCoding2020\AOC1.1\Resources\Data12.txt");
+
+            var shipPoint = new Point();
+            var wayPoint = new Point(10, 1);
+
+            foreach (var line in lines)
+            {
+                var symbol = line[0];
+                var value = int.Parse(line.Substring(1));
+
+                switch (symbol)
+                {
+                    case 'N':
+                        wayPoint = new Point(wayPoint.X, wayPoint.Y + value);
+                        break;
+
+                    case 'S':
+                        wayPoint = new Point(wayPoint.X, wayPoint.Y - value);
+                        break;
+
+                    case 'E':
+                        wayPoint = new Point(wayPoint.X + value, wayPoint.Y);
+                        break;
+
+                    case 'W':
+                        wayPoint = new Point(wayPoint.X - value, wayPoint.Y);
+                        break;
+
+                    case 'L':
+                        wayPoint = RotatePoint(wayPoint, value);
+                        break;
+
+                    case 'R':
+                        wayPoint = RotatePoint(wayPoint, 360 - value);
+                        break;
+
+                    case 'F':
+                        shipPoint = new Point(shipPoint.X + wayPoint.X * value, shipPoint.Y + wayPoint.Y * value);
+                        break;
+                }
+            }
+
+            Console.WriteLine($"Day 12, task 2: {Math.Abs(shipPoint.X) + Math.Abs(shipPoint.Y)}");
+        }
+
+        private static Point RotatePoint(Point pointToRotate, double angleInDegrees)
+        {
+            double angleInRadians = angleInDegrees * (Math.PI / 180);
+            double cosTheta = Math.Cos(angleInRadians);
+            double sinTheta = Math.Sin(angleInRadians);
+            return new Point
+            {
+                X = (int)Math.Round(cosTheta * pointToRotate.X - sinTheta * pointToRotate.Y),
+                Y = (int)Math.Round(sinTheta * pointToRotate.X + cosTheta * pointToRotate.Y)
+            };
         }
     }
 }
