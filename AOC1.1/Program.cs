@@ -28,6 +28,32 @@
             Day11.Task2();
             Day12.Task1();
             Day12.Task2();
+            Day13.Task1();
+            Day13.Task2();
+            Day14.Task1();
+            Day14.Task2();
+            Day15.Task1();
+            Day15.Task2();
+            Day16.Task1();
+            Day16.Task2();
+            Day17.Task1();
+            Day17.Task2();
+            Day18.Task1();
+            Day18.Task2();
+            Day19.Task1();
+            Day19.Task2();
+            Day20.Task1();
+            Day20.Task2();
+            Day21.Task1();
+            Day21.Task2();
+            Day22.Task1();
+            Day22.Task2();
+            Day23.Task1();
+            Day23.Task2();
+            Day24.Task1();
+            Day24.Task2();
+            Day25.Task1();
+            Day25.Task2();
         }
     }
 }
