@@ -14,7 +14,7 @@ namespace AOC1._1
             var waitTimes = buses.Select(bus => (bus, bus - earliestArival % bus)).ToList();
 
             var minValue = waitTimes.Min(waitTime => waitTime.Item2);
-            Console.WriteLine($"Day 13, task 1: {waitTimes[6].Item2 * waitTimes[6].bus}");
+            Console.WriteLine($"Day 13, task 1: {waitTimes[minValue].Item2 * waitTimes[minValue].bus}");
         }
 
         public static void Task2()
