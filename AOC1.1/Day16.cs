@@ -39,7 +39,7 @@ namespace AOC1._1
 
             var sumRate = nearbyTickets.Sum(ticket =>
                 ticket.Sum(ticketNumber =>
-                    filters.Any(filter => 
+                    filters.Any(filter =>
                         filter.IsInRange(ticketNumber)) ? 0 : ticketNumber));
 
             Console.WriteLine($"Day 16, task 1: {sumRate}");
@@ -96,6 +96,57 @@ namespace AOC1._1
 
         public static void Task2()
         {
+            string[] lines = System.IO.File.ReadAllLines(@"C:\Remote\AdventOfCoding2020\AOC1.1\Resources\Data16.txt");
+
+            var filters = new List<Filter>();
+            var nearbyTickets = new List<List<int>>();
+            var yourTicket = ParseData(lines, filters, nearbyTickets);
+
+            var validTickets = nearbyTickets.Where(ticket =>
+                ticket.All(ticketNumber =>
+                    filters.Any(filter =>
+                        filter.IsInRange(ticketNumber)))).ToList();
+
+            var filtersIndexes = new Dictionary<Filter, List<int>>();
+
+            for (int i = 0; i < validTickets.First().Count; i++)
+            {
+                foreach (var filter in filters)
+                {
+                    if (validTickets.Select(ticket => ticket[i]).All(number => filter.IsInRange(number)))
+                    {
+                        if (filtersIndexes.ContainsKey(filter))
+                        {
+                            filtersIndexes[filter].Add(i);
+                        }
+                        else
+                        {
+                            filtersIndexes[filter] = new List<int> { i };
+                        }
+                    }
+                }
+            }
+
+            var filtersIndex = new Dictionary<Filter, int>();
+            while (filtersIndexes.Count > 0)
+            {
+                var singleKeyValue = filtersIndexes.First(filterIndex => filterIndex.Value.Count == 1);
+                var index = singleKeyValue.Value[0];
+                filtersIndex[singleKeyValue.Key] = index;
+
+                filtersIndexes.Remove(singleKeyValue.Key);
+                foreach (var valueKey in filtersIndexes)
+                {
+                    valueKey.Value.Remove(index);
+                }
+            }
+
+            var yourTicketNumbers = filtersIndex.Where(valueKey => valueKey.Key.Name.StartsWith("departure")).Select(valueKey => yourTicket[valueKey.Value]).ToList();
+
+            long multiplied = 1;
+            yourTicketNumbers.ForEach(number => multiplied *= number);
+
+            Console.WriteLine($"Day 16, task 2: {multiplied}");
         }
     }
 }
