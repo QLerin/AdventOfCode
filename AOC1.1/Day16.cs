@@ -141,10 +141,8 @@ namespace AOC1._1
                 }
             }
 
-            var yourTicketNumbers = filtersIndex.Where(valueKey => valueKey.Key.Name.StartsWith("departure")).Select(valueKey => yourTicket[valueKey.Value]).ToList();
-
-            long multiplied = 1;
-            yourTicketNumbers.ForEach(number => multiplied *= number);
+            var yourTicketNumbers = filtersIndex.Where(valueKey => valueKey.Key.Name.StartsWith("departure")).Select(valueKey => yourTicket[valueKey.Value]);
+            var multiplied = yourTicketNumbers.Aggregate((long)1, (total, number) => total * number);
 
             Console.WriteLine($"Day 16, task 2: {multiplied}");
         }
