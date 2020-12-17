@@ -1,25 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace AOC1._1
 {
-    public class Day17
+    public class Day17_2
     {
         public class Position
         {
-            public Position(int x, int y, int z)
-            {
-                X = x;
-                Y = y;
-                Z = z;
-            }
-
-            public int X { get; }
-
             protected bool Equals(Position other)
             {
-                return X == other.X && Y == other.Y && Z == other.Z;
+                return X == other.X && Y == other.Y && Z == other.Z && W == other.W;
             }
 
             public override bool Equals(object obj)
@@ -27,12 +19,12 @@ namespace AOC1._1
                 if (ReferenceEquals(null, obj)) return false;
                 if (ReferenceEquals(this, obj)) return true;
                 if (obj.GetType() != this.GetType()) return false;
-                return Equals((Position)obj);
+                return Equals((Position) obj);
             }
 
             public override int GetHashCode()
             {
-                return HashCode.Combine(X, Y, Z);
+                return HashCode.Combine(X, Y, Z, W);
             }
 
             public static bool operator ==(Position left, Position right)
@@ -45,25 +37,35 @@ namespace AOC1._1
                 return !Equals(left, right);
             }
 
+            public Position(int x, int y, int z, int w)
+            {
+                X = x;
+                Y = y;
+                Z = z;
+                W = w;
+            }
+
+            public int X { get; }
             public int Y { get; }
             public int Z { get; }
+            public int W { get; }
         }
 
-        public static void Task1()
+        public static void Task2()
         {
             string[] lines = System.IO.File.ReadAllLines(@"C:\Remote\AdventOfCoding2020\AOC1.1\Resources\Data17.txt");
             var starting = new Dictionary<Position, bool>();
 
             var size = lines.Length;
             var startingSize = size;
-            var zLevel = 0;
+            var wLevel = 0;
 
             for (var y = 0; y < lines.Length; y++)
             {
                 for (var x = 0; x < lines[y].Length; x++)
                 {
                     var isActive = lines[x][y] == '#';
-                    starting[new Position(x, y, 0)] = isActive;
+                    starting[new Position(x, y,0, 0)] = isActive;
                 }
             }
 
@@ -71,15 +73,18 @@ namespace AOC1._1
             {
                 var temporaryDictionary = new Dictionary<Position, bool>();
                 size += 2;
-                zLevel++;
+                wLevel++;
                 for (var tempX = 0; tempX < size; tempX++)
                 {
                     for (var tempY = 0; tempY < size; tempY++)
                     {
-                        var modifier = (startingSize - size) / 2;
-                        for (var z = -zLevel; z <= zLevel; z++)
+                        for (var tempZ = 0; tempZ < size; tempZ++)
                         {
-                            temporaryDictionary[new Position(tempX + modifier, tempY + modifier, z)] = false;
+                            var modifier = (startingSize - size) / 2;
+                            for (var w = -wLevel; w <= wLevel; w++)
+                            {
+                                temporaryDictionary[new Position(tempX + modifier, tempY + modifier, tempZ + modifier, w)] = false;
+                            }
                         }
                     }
                 }
@@ -102,7 +107,7 @@ namespace AOC1._1
                 starting = temporaryDictionary;
             }
 
-            Console.WriteLine($"Day 17, task 1: {starting.Count(valueKey => valueKey.Value)}");
+            Console.WriteLine($"Day 17, task 2: {starting.Count(valueKey => valueKey.Value)}");
         }
 
         public static bool TryToGetValue(Dictionary<Position, bool> dictionary, Position position)
@@ -119,10 +124,13 @@ namespace AOC1._1
                 {
                     for (var z = currentPosition.Z - 1; z <= currentPosition.Z + 1; z++)
                     {
-                        var position = new Position(x, y, z);
-                        if (currentPosition != position)
+                        for (var w = currentPosition.W - 1; w <= currentPosition.W + 1; w++)
                         {
-                            nearby.Add(position);
+                            var position = new Position(x, y, z, w);
+                            if (currentPosition != position)
+                            {
+                                nearby.Add(position);
+                            }
                         }
                     }
                 }
