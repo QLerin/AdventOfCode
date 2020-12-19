@@ -5,25 +5,25 @@ using System.Text.RegularExpressions;
 
 namespace AOC1._1
 {
-    public class Day19
+    public class Day19_2
     {
         private class Filter
         {
-            public Filter(int name)
+            public Filter()
             {
-                Name = name;
                 UsedFilters = new List<List<Filter>>();
                 RegexPart = "";
             }
 
-            public int Name { get; }
+            //Only used two times for "a" and "b" but w/e
             public List<List<Filter>> UsedFilters { get; }
+
             public string RegexPart { get; set; }
         }
 
-        public static void Task1()
+        public static void Task2()
         {
-            string[] lines = System.IO.File.ReadAllLines(@"C:\Remote\AdventOfCoding2020\AOC1.1\Resources\Data19.txt");
+            string[] lines = System.IO.File.ReadAllLines(@"C:\Remote\AdventOfCoding2020\AOC1.1\Resources\Data19_2.txt");
 
             var isFilters = true;
             var usedFilters = new Dictionary<int, Filter>();
@@ -47,11 +47,59 @@ namespace AOC1._1
                 }
             }
 
-            var filter = usedFilters[0];
-            var regexSadness = $"^{GetRegexSadness(filter)}$";
+            var regexSadness42 = GetRegexSadness(usedFilters[42]);
+            var regexSadness31 = GetRegexSadness(usedFilters[31]);
+            var count = 0;
 
-            var count = messages.Count(message => Regex.IsMatch(message, regexSadness));
-            Console.WriteLine($"Day 19, task 1: {count}");
+            foreach (var message in messages)
+            {
+                if (DoesMessageMatches(message, regexSadness42, regexSadness31))
+                {
+                    count++;
+                }
+            }
+
+            //var count = messages.Count(message => Regex.IsMatch(message, regexSadness));
+            Console.WriteLine($"Day 19, task 2: {count}");
+        }
+
+        private static bool DoesMessageMatches(string message, string regexSadness42, string regexSadness31)
+        {
+            string recombined = "";
+            var messageToMatch = message;
+            var matches42 = Regex.Matches(messageToMatch, regexSadness42).Select(match => match.Value).ToList();
+            var usedCount = 0;
+            if (matches42.Count > 0)
+            {
+                foreach (var match in matches42)
+                {
+                    if (messageToMatch.StartsWith(match))
+                    {
+                        messageToMatch = messageToMatch.Substring(match.Length);
+                        recombined += match;
+                        usedCount++;
+                    }
+                    else
+                    {
+                        if (usedCount < 2)
+                        {
+                            return false;
+                        }
+
+                        break;
+                    }
+                }
+            }
+
+            var matches31 = Regex.Matches(messageToMatch, regexSadness31).Select(match => match.Value).ToList();
+            if (matches31.Count == 0 || matches31.Count > usedCount - 1)
+            {
+                return false;
+            }
+
+            recombined += string.Join("", matches31);
+
+            return recombined == message;
         }
 
         private static void AddFilter(string line, Dictionary<int, Filter> usedFilters)
@@ -90,7 +138,7 @@ namespace AOC1._1
                 return usedFilters[name];
             }
 
-            var filter = new Filter(name);
+            var filter = new Filter();
             usedFilters.Add(name, filter);
 
             return filter;

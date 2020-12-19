@@ -41,7 +41,7 @@
             Day18.Task1();
             Day18.Task2();
             Day19.Task1();
-            Day19.Task2();
+            Day19_2.Task2();
             Day20.Task1();
             Day20.Task2();
             Day21.Task1();
