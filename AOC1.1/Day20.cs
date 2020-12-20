@@ -118,10 +118,5 @@ namespace AOC1._1
             var piece = new PuzzlePiece(name, new List<string> {top, right, bot, left});
             return piece;
         }
-
-        public static void Task2()
-        {
-
-        }
     }
 }
