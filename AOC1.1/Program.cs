@@ -45,9 +45,9 @@
             //Day20.Task1();
             //Day20_2.Task2();
             //Day21.Task1();
-            Day21.Task2();
-            Day22.Task1();
-            Day22.Task2();
+            //Day21.Task2();
+            //Day22.Task1();
+            //Day22.Task2();
             Day23.Task1();
             Day23.Task2();
             Day24.Task1();
