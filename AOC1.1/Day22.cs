@@ -109,7 +109,7 @@ namespace AOC1._1
                 }
 
                 usedCards.Add((usedDeck1, usedDeck2));
-                
+
                 var number1 = deck1.Dequeue();
                 var number2 = deck2.Dequeue();
 
