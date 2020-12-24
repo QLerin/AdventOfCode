@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace AOC1._1
 {
@@ -97,22 +98,25 @@ namespace AOC1._1
 
         private static bool RecursiveCombat(Queue<int> deck1, Queue<int> deck2)
         {
-            var usedCards = new HashSet<(int card, int otherCard)>();
+            var usedCards = new HashSet<(string pastDeck1, string pastDeck2)>();
             while (deck1.Count > 0 && deck2.Count > 0)
             {
-                var number1 = deck1.Dequeue();
-                var number2 = deck2.Dequeue();
-                if (usedCards.Contains((number1, number2)))
+                var usedDeck1 = string.Join(",", deck1.ToList());
+                var usedDeck2 = string.Join(",", deck2.ToList());
+                if (usedCards.Contains((usedDeck1, usedDeck2)))
                 {
                     return true;
                 }
 
-                usedCards.Add((number1, number2));
+                usedCards.Add((usedDeck1, usedDeck2));
+                
+                var number1 = deck1.Dequeue();
+                var number2 = deck2.Dequeue();
 
                 bool firstWon;
                 if (number1 <= deck1.Count && number2 <= deck2.Count)
                 {
-                    firstWon = RecursiveCombat(new Queue<int>(deck1), new Queue<int>(deck2));
+                    firstWon = RecursiveCombat(new Queue<int>(deck1.ToList().Take(number1)), new Queue<int>(deck2.ToList().Take(number2)));
                 }
                 else
                 {
