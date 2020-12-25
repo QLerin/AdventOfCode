@@ -77,6 +77,7 @@ namespace AOC1._1
             var current = 0;
             var max = numbers.Max();
             var min = numbers.Min();
+            var timer = DateTime.UtcNow;
             while (moves > 0)
             {
                 moves--;
@@ -115,9 +116,10 @@ namespace AOC1._1
             numbers.AddRange(numbers);
 
             var startIndex = numbers.FindIndex(0, number => number == 1);
-            var result = numbers[startIndex + 1] * numbers[startIndex + 2];
-
+            var result = (long)numbers[startIndex + 1] * numbers[startIndex + 2];
+            
             Console.WriteLine($"Day 23, task 2: {result}");
+            Console.WriteLine($"{numbers[startIndex + 1]} {numbers[startIndex + 2]}");
         }
     }
 }

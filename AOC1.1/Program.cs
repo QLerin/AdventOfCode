@@ -50,8 +50,8 @@
             //Day22.Task2();
             //Day23.Task1();
             //Day23.Task2();
-            Day24.Task1();
-            Day24.Task2();
+            //Day24.Task1();
+            //Day24.Task2();
             Day25.Task1();
             Day25.Task2();
         }
