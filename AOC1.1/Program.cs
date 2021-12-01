@@ -1,9 +1,13 @@
-﻿namespace AOC1._1
+﻿using AOC1._1.Y2021;
+
+namespace AOC1._1
 {
     internal class Program
     {
         private static void Main(string[] args)
         {
+            Day1Y2021.Task1();
+            Day1Y2021.Task2();
             //Day1.Task1();
             //Day1.Task2();
             //Day2.Task1();
@@ -52,8 +56,8 @@
             //Day23.Task2();
             //Day24.Task1();
             //Day24.Task2();
-            Day25.Task1();
-            Day25.Task2();
+            //Day25.Task1();
+            //Day25.Task2();
         }
     }
 }
