@@ -8,6 +8,8 @@ namespace AOC1._1
         {
             Day1Y2021.Task1();
             Day1Y2021.Task2();
+            Day2Y2021.Task1();
+            Day2Y2021.Task2();
             //Day1.Task1();
             //Day1.Task2();
             //Day2.Task1();
