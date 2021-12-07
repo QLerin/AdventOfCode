@@ -18,6 +18,8 @@ namespace AOC1._1
             Day5Y2021.Task2();
             Day6Y2021.Task1();
             Day6Y2021.Task2();
+            Day7Y2021.Task1();
+            Day7Y2021.Task2();
             //Day1.Task1();
             //Day1.Task2();
             //Day2.Task1();
